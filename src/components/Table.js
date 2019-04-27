@@ -5,16 +5,16 @@ class Table extends Component {
     render() {
         const {
             users,
-            title,
-            buttonName
+            showOnlyActiveUsers,
+            onSelectUser
          } = this.props;
 
         return(
             <div className="container-table">
                 <div className="container-table__header">
-                    {title}
+                    {showOnlyActiveUsers ? "Active users" : "All users"}
                     <span className="show-all-link" onClick={this.props.handleShowUsers}>
-                        {buttonName}
+                        {showOnlyActiveUsers ? "Show all users" : "show active users"}
                     </span>
                 </div>
                 <div className="container-table__content">
@@ -28,7 +28,7 @@ class Table extends Component {
                             </tr>
                             {users.map((user, index) => {
                                 return(
-                                    <tr key={index}>
+                                    <tr key={index} onClick={() => onSelectUser(user)}>
                                         <td> {user.name.first + " " + user.name.last} </td>
                                         <td> {user.email} </td>
                                         <td> {user.phone} </td>
@@ -38,6 +38,12 @@ class Table extends Component {
                             })}
                         </tbody>
                     </table>
+                    {users.length < 1 &&
+                        <div className="warning">
+                            Nothing was found.
+                            {showOnlyActiveUsers && " Try to search in all users."}
+                        </div>
+                    }
                 </div>
             </div>
         )

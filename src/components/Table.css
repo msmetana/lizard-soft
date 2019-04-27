@@ -8,7 +8,6 @@
   border-radius: 5px;
   border-color: black;
   border: 2px;
-  position: relative;
 }
 
 .container-table__header {
@@ -42,6 +41,15 @@
     padding-bottom: 15px;
 }
 
+.warning {
+    font-size: 12px;
+    text-align: left;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    color: grey;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
 .table-form {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   font-size: 16px;
@@ -63,11 +71,27 @@
   padding: 7px 17px;
 }
 
-th:nth-child(1), td:nth-child(1) {
+th:nth-child(1) {
   width: 155px;
 }
 
-td:nth-child(2), td:nth-child(2) {
+th:nth-child(2) {
+  width: 285px;
+}
+
+th:nth-child(3) {
+  width: 155px;
+}
+
+th:nth-child(4) {
+  width: 59px;
+}
+
+td:nth-child(1) {
+  width: 155px;
+}
+
+td:nth-child(2) {
   width: 285px;
 }
 
