@@ -10,7 +10,8 @@ class Main extends Component {
         showActiveUsers: true,
         searchValue: '',
         searchType: '',
-        user: ''
+        user: '',
+        selectedTag: ''
     }
 
     handleShowActiveUsers = () => {
@@ -44,12 +45,38 @@ class Main extends Component {
         });
     }
 
+    handleSelectTag = (value) => {
+        let tags = this.state.selectedTag;
+
+        if (!(tags.includes(value))) {
+            this.setState({
+                selectedTag: tags.length < 1 ? [value] : [...tags, value]
+            });
+        }
+    }
+
+    handleRemoveOneTag = (value) => {
+        const tags = this.state.selectedTag;
+        this.setState({
+            selectedTag: tags.filter(function(tag, index) {
+                return value !== tag
+            })
+        });
+    }
+
+    handleRemoveTags = () => {
+        this.setState({
+            selectedTag: '',
+        });
+    }
+
     render() {
         const {
             showActiveUsers,
             searchValue,
             searchType,
-            user
+            user,
+            selectedTag
         } = this.state;
 
         let tags = [];
@@ -62,8 +89,6 @@ class Main extends Component {
                 }
             });
         });
-
-        console.log(tags);
 
         let users = !showActiveUsers ? friends :
             friends.filter(function(user, index){
@@ -97,6 +122,22 @@ class Main extends Component {
             }
         }
 
+        if (selectedTag !== '' && selectedTag.length > 0) {
+            let newUsers = [];
+            users.forEach(function(user) {
+                let equal = true;
+                selectedTag.forEach(function(tag) {
+                    if (!(user.tags.includes(tag))) {
+                        equal = false;
+                    }
+                });
+                if (equal) {
+                    newUsers.push(user)
+                }
+            });
+            users = newUsers;
+        }
+
         return(
             <React.Fragment>
                 { !user ?
@@ -107,6 +148,11 @@ class Main extends Component {
                             searchType={this.state.searchType}
                             handleSearchType={this.handleSearchType}
                             searchList={['name', 'email', 'phone', 'company']}
+                            handleSelectTag={this.handleSelectTag}
+                            selectedTag={this.state.selectedTag}
+                            tagsList={tags}
+                            onRemoveTags={this.handleRemoveTags}
+                            onRemoveOneTag={this.handleRemoveOneTag}
                         />
                         <Table
                             users={users}

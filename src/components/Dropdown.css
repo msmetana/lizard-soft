@@ -1,6 +1,7 @@
 .dropdown {
   position: relative;
   margin-bottom: 25px;
+  width: 376px;
 }
 
 .dropdown__title {
@@ -12,16 +13,37 @@
 }
 
 .dropdown__header-field {
-  color: dimgray;
+  color: #fff;
   font-size: 14px;
-  height: 35px;
+  height: 34px;
   width: 350px;
   padding: 0 10px;
   border: none;
   outline: none;
   background-color: transparent;
   text-align: left;
-  margin-top: 15px;
+  margin-top: 16px;
+}
+
+.selected-type {
+  color: dimgray;
+}
+
+.dropdown__label {
+  background: #1E2841;
+  color: #737F92;
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  padding: 2px 6px;
+}
+
+.active-label {
+  color: #3C78E0;
+}
+
+.active-dropdown {
+  border-color: #3C78E0;
 }
 
 .dropdown-icon {
@@ -31,14 +53,37 @@
 }
 
 .dropdown__list {
-    position: absolute;
-    width: 370px;
-    background-color: #1E2841;
-    margin-top: -25px;
-    border-radius: 2px;
+  position: relative;
+  width: 370px;
+  height: 120px;
+  background-color: #2e4c80;
+  overflow-y: scroll;
+  margin-top: -22px;
+  border-radius: 2px;
+  z-index: 999;
 }
 
 .list-item:hover {
-    cursor: pointer;
-    background-color: white;
+  cursor: pointer;
+  background-color: #919EBA;
+}
+
+.list-item {
+  height: 25px;
+  padding-top: 5px;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: normal;
+  align-items: center;
+  position: relative;
+  color: #737F92;
+}
+
+ul {
+  display: grid;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-align: left;
 }

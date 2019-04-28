@@ -22,18 +22,26 @@ class Dropdown extends Component {
         });
     }
 
-    // var res = str1.concat(str2);
     render() {
         const {
             searchType,
-            list
+            list,
+            label,
+            placeholder
         } = this.props;
+
+        const selectedClass = searchType ? "" : "selected-type";
+        const activeLabelClass = this.state.isOpen ? "active-label" : '';
+        const activeDropdownClass = this.state.isOpen ? "active-dropdown" : '';
 
         return (
             <div className="dropdown">
-                <div className="dropdown__title" onClick={this.handleOpenDropdown}>
-                    <div className="dropdown__header-field">
-                        {searchType || "Choose search type"}
+                <div className={`dropdown__title ${activeDropdownClass}`} onClick={this.handleOpenDropdown}>
+                    <div className={`dropdown__label ${activeLabelClass}`}>
+                        {label}
+                    </div>
+                    <div className={`dropdown__header-field ${selectedClass}`}>
+                        {searchType || placeholder}
                     </div>
                     <div className="dropdown-icon">
                         <img src={this.state.isOpen ? iconUp : iconDown} alt="" />
