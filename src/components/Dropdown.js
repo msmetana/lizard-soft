@@ -10,6 +10,7 @@ class Dropdown extends Component {
 
     handleOpenDropdown = () => {
         const prevIsOpen = this.state.isOpen;
+
         this.setState({
             isOpen: !prevIsOpen
         });

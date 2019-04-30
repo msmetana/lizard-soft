@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Main.css';
 import SearchBar from './SearchBar'
 import Table from './Table'
 import DetailsPage from './DetailsPage'
@@ -16,6 +15,7 @@ class Main extends Component {
 
     handleShowActiveUsers = () => {
         const prevShowActiveUsers = this.state.showActiveUsers;
+
         this.setState({
             showActiveUsers: !prevShowActiveUsers
         });
@@ -46,7 +46,7 @@ class Main extends Component {
     }
 
     handleSelectTag = (value) => {
-        let tags = this.state.selectedTag;
+        const tags = this.state.selectedTag;
 
         if (!(tags.includes(value))) {
             this.setState({
@@ -97,6 +97,7 @@ class Main extends Component {
 
         if (searchValue !== '') {
             const input = searchValue.toLowerCase();
+
             switch (searchType) {
                 case "name":
                     users = users.filter(function(user, index){
@@ -124,8 +125,10 @@ class Main extends Component {
 
         if (selectedTag !== '' && selectedTag.length > 0) {
             let newUsers = [];
+
             users.forEach(function(user) {
                 let equal = true;
+
                 selectedTag.forEach(function(tag) {
                     if (!(user.tags.includes(tag))) {
                         equal = false;
@@ -145,11 +148,11 @@ class Main extends Component {
                         <SearchBar
                             handleSearch={this.handleSearch}
                             value={searchValue}
-                            searchType={this.state.searchType}
+                            searchType={searchType}
                             handleSearchType={this.handleSearchType}
                             searchList={['name', 'email', 'phone', 'company']}
                             handleSelectTag={this.handleSelectTag}
-                            selectedTag={this.state.selectedTag}
+                            selectedTag={selectedTag}
                             tagsList={tags}
                             onRemoveTags={this.handleRemoveTags}
                             onRemoveOneTag={this.handleRemoveOneTag}

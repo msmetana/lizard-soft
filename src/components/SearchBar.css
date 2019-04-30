@@ -1,4 +1,4 @@
-.container-search {
+  .container-search {
   text-align: center;
   height: 175px;
   width: 824px;
@@ -68,64 +68,64 @@ input {
 }
 
 .error-search-type {
-    text-align: left;
-    font-size: 14px;
-    color: red;
+  text-align: left;
+  font-size: 14px;
+  color: red;
 }
 
 .other-options {
-    text-align: right;
-    cursor: pointer;
-    color: grey;
-    font-size: 14px;
-    text-decoration: underline;
-    position: absolute;
-    top: 150px;
-    right: 23px;
-    bottom: 23px;
-    left: 23px;
+  text-align: right;
+  cursor: pointer;
+  color: grey;
+  font-size: 14px;
+  text-decoration: underline;
+  position: absolute;
+  top: 150px;
+  right: 23px;
+  bottom: 23px;
+  left: 23px;
 }
 
 .active-label {
-    color: #3C78E0;
+  color: #3C78E0;
 }
 
 .active-input {
-    border-color: #3C78E0;
+  border-color: #3C78E0;
 }
 
 .filter-block {
-    height: 265px;
+  height: 265px;
 }
 
 .search-by-tag-block {
-    height: 70px;
-    width: 776px;
-    position: relative;
-    top: 120px;
-    bottom: 23px;
-    left: 23px;
-    display: flex;
+  height: 70px;
+  width: 776px;
+  position: relative;
+  top: 120px;
+  bottom: 23px;
+  left: 23px;
+  display: flex;
 }
 
 .selected-tags {
-    padding-left: 35px;
-    padding-right: 23px;
-    margin-top: 8px;
+  padding-left: 35px;
+  padding-right: 23px;
+  margin-top: 8px;
 }
 
 .tag-element {
-    border: 1px solid #737F92;
-    border-radius: 7px;
-    margin-right: 7px;
-    padding-left: 2px;
-    align-items: center;
+  border: 1px solid #737F92;
+  border-radius: 7px;
+  margin-right: 7px;
+  padding-left: 2px;
+  align-items: center;
 }
 
 .remove-tag {
-    cursor: pointer;
-    color: grey;
-    font-size: 10px;
-    margin-left: 4px;
-    margin-right: 2px;
+  cursor: pointer;
+  color: grey;
+  font-size: 10px;
+  margin-left: 4px;
+  margin-right: 2px;
 }

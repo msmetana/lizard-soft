@@ -10,6 +10,7 @@ class SearchBar extends Component {
 
     handleAddingFilters = () => {
         const prevTagsFilter = this.state.tagsFilter;
+
         if (prevTagsFilter) {
             this.props.onRemoveTags();
         }
@@ -29,6 +30,7 @@ class SearchBar extends Component {
             inputFocused: false
         });
     }
+
     render() {
         const {
             value,

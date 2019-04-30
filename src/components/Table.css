@@ -1,4 +1,4 @@
-.container-table {
+  .container-table {
   text-align: center;
   min-height: 50vh;
   width: 824px;
@@ -26,28 +26,28 @@
 }
 
 .show-all-link {
-    position: absolute;
-    padding-left: 205px;
-    color: grey;
-    font-size: 12px;
+  position: absolute;
+  padding-left: 205px;
+  color: grey;
+  font-size: 12px;
 }
 
 .show-all-link:hover {
-    cursor: pointer;
-    text-decoration: underline;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .container-table__content {
-    padding-bottom: 15px;
+  padding-bottom: 15px;
 }
 
 .warning {
-    font-size: 12px;
-    text-align: left;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    color: grey;
-    margin-top: 20px;
-    padding-left: 20px;
+  font-size: 12px;
+  text-align: left;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  color: grey;
+  margin-top: 20px;
+  padding-left: 20px;
 }
 
 .table-form {
@@ -71,27 +71,27 @@
   padding: 7px 17px;
 }
 
-th:nth-child(1) {
+.table-form th:nth-child(1) {
   width: 155px;
 }
 
-th:nth-child(2) {
+.table-form th:nth-child(2) {
   width: 285px;
 }
 
-th:nth-child(3) {
+.table-form th:nth-child(3) {
   width: 155px;
 }
 
-th:nth-child(4) {
+.table-form th:nth-child(4) {
   width: 59px;
 }
 
-td:nth-child(1) {
+.table-form td:nth-child(1) {
   width: 155px;
 }
 
-td:nth-child(2) {
+.table-form td:nth-child(2) {
   width: 285px;
 }
 
